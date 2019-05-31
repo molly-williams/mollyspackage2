@@ -1,0 +1,38 @@
+---
+title: "Package Making Notes"
+author: "Molly Williams"
+date: "5/31/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(roxygen2)
+library(devtools)
+# need both of these packages in order for document to work
+
+```
+
+In a function, R files have to have inputs and parameters at the top using the following syntax 
+```{r}
+#' name of function
+#'
+#' description of what it's going to do (can be multiple lines)
+#' @param
+#' @param
+#' @param
+#' @author
+#' @examples
+#' @return output variable
+
+```
+
+- Run document() to enable help functionality (?nameoffunction) - pulls it directly from the function.R file 
+- Every so often, clean and rebuild the repository (Build tab>more>clean and rebuild)
+
+### Creating data documentation
+
+- Create a data folder in the package directory
+- have a data file (df) in your environment
+- Run: use_data(dfname) - creates a .rda file in the data folder containing the data in df 
+
